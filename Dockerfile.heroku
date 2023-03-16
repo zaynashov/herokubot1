@@ -1,0 +1,11 @@
+# было FROM pallid/oscript-web-heroku:dev
+FROM k2589/oscriptweb4heroku:0.5.0
+
+COPY src /app
+
+ARG APP_NAME
+ARG LOGGING_CONSOLE
+ARG LOGGING_LEVEL
+
+# Ставим зависимости указанные в packagedef
+RUN curl -o deb oscript.io/Downloads/latest/deb && dpkg -i deb && cd /app && opm install -l
