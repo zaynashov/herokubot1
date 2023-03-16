@@ -31,8 +31,8 @@ def webhook():
 
     # распарсиваем данные и прикрепляем к переменным
     ticker = data['ticker']
-    price = data['age']
-    signal = data['signal']
+    #price = data['age']
+    #signal = data['signal']
     send_message()
 
     return 'OK'
